@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+🚀 Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este repositorio es la interfaz de usuario (Frontend) para el Task Manager. Construido con React, se encarga de gestionar la experiencia del usuario, el manejo del estado local, y la comunicación asíncrona con el Backend de Django.
 
-## Available Scripts
+🛠️ Technical Stack
 
-In the project directory, you can run:
 
-### `npm start`
+    Frontend Library: React.js (Hooks, Context)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    Routing: React Router DOM (para navegación y rutas protegidas)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    HTTP Client: Axios (para manejar las peticiones a la API)
 
-### `npm test`
+    Styling: CSS Modules / Styled Components (A elección)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+🏗️ Architecture & Key Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    Conexión con API Externa: Uso de Axios para realizar peticiones HTTP (GET, POST, PUT, DELETE) a los endpoints del Backend de DRF.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    Gestión de Tokens JWT: Implementación de un flujo de autenticación para enviar el token JWT en el encabezado de todas las peticiones protegidas.
 
-### `npm run eject`
+    Rutas Protegidas: Uso de React Router para crear un componente de guardia (ProtectedRoute) que redirige a la página de login si el usuario no tiene una sesión activa.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    Patrón de State Management: Manejo del estado local y de las tareas utilizando Hooks (useState, useEffect) o un Context API simple para compartir el estado de autenticación a través de la aplicación.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    Experiencia de Usuario (UI): Componentes dedicados para la creación de tareas, visualización del listado y cambio de estados (Completado/Pendiente).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+⚙️ Environment Configuration (Frontend)
 
-## Learn More
+El Frontend necesita saber dónde encontrar el Backend. Se debe usar un archivo .env para configurar la URL base del API.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# .env (o .env.development)
+REACT_APP_API_URL=http://localhost:8000/api
